@@ -15,7 +15,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/main_page"
+            android:text="@string/about"
             android:textAlignment="center"
             android:background="@drawable/rounded_head"
             android:padding="20dp"
@@ -29,41 +29,35 @@
             android:background="@drawable/rounded_body"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/testing"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/warning"
+                android:textAlignment="center"
+                android:textSize="24dp"
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_text"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textAbout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:textSize="24dp"
-                android:background="@drawable/rounded_two_corners"
-                android:text="@string/testing" />
+                android:background="@drawable/rounded_text"
+                android:padding="10dp"
+                android:textSize="20dp" />
 
             <Button
-                android:id="@+id/history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textSize="24dp"
-                android:background="@drawable/rounded_two_corners"
-                android:text="@string/history" />
-
-            <Button
-                android:id="@+id/settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textSize="24dp"
-                android:background="@drawable/rounded_two_corners"
-                android:text="@string/settings" />
-
-            <Button
-                android:id="@+id/about"
+                android:id="@+id/back"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="@drawable/rounded_two_corners"
-                android:onClick="goAbout"
-                android:text="@string/about"
+                android:onClick="goBack"
+                android:text="@string/back"
                 android:textSize="24dp" />
         </LinearLayout>
     </LinearLayout>
