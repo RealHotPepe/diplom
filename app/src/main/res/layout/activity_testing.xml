@@ -185,7 +185,7 @@
                             android:layout_weight="1"
                             android:background="@drawable/rounded_two_corners"
                             android:onClick="goBack"
-                            android:text="Назад"
+                            android:text="@string/back"
                             android:textSize="18sp" />
 
                         <Button
@@ -196,7 +196,7 @@
                             android:background="@drawable/rounded_two_corners"
                             android:layout_margin="5dp"
                             android:textSize="18sp"
-                            android:text="Проверить" />
+                            android:text="@string/check" />
                     </LinearLayout>
 
                 </LinearLayout>

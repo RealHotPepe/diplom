@@ -23,5 +23,6 @@
     <string name="SOT">Средний объем тромбоцита</string>
     <string name="trombokrit">Тромбокрит</string>
     <string name="IRT">Индекс распред. тромбоцитов</string>
+    <string name="check">Проверить</string>
 
 </resources>
