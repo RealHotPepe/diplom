@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/testing"
+            android:textAlignment="center"
+            android:background="@drawable/rounded_head"
+            android:padding="20dp"
+            android:textSize="34dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:padding="5dp"
+            android:background="@drawable/rounded_body"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="15dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/editLeik"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/leik" />
+
+                    <EditText
+                        android:id="@+id/editErit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/erit" />
+
+                    <EditText
+                        android:id="@+id/editGemo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/gemo" />
+
+                    <EditText
+                        android:id="@+id/editGemat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/gemat" />
+
+                    <EditText
+                        android:id="@+id/editSOE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/SOE" />
+
+                    <EditText
+                        android:id="@+id/editSSH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/SSH" />
+
+                    <EditText
+                        android:id="@+id/editSKH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/SKH" />
+
+                    <EditText
+                        android:id="@+id/editTombocit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/trombocit" />
+
+                    <EditText
+                        android:id="@+id/editSOT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/SOT" />
+
+                    <EditText
+                        android:id="@+id/editTrombokrit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/trombokrit" />
+
+                    <EditText
+                        android:id="@+id/editIRT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/rounded_text"
+                        android:padding="10dp"
+                        android:textSize="20sp"
+                        android:hint="@string/IRT" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_two_corners"
+                            android:onClick="goBack"
+                            android:text="Назад"
+                            android:textSize="18sp" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/rounded_two_corners"
+                            android:layout_margin="5dp"
+                            android:textSize="18sp"
+                            android:text="Проверить" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

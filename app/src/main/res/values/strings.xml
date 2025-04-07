@@ -11,4 +11,17 @@
         Данное приложение носит исключительно ознакомительный характер. Мы крайне рекомендуем обратиться к врачу, если Вас что-то тревожит!
     </string>
     <string name="back">На главную</string>
+
+    <string name="leik">Лейкоциты</string>
+    <string name="erit">Эритроциты</string>
+    <string name="gemo">Гемоглобин</string>
+    <string name="gemat">Гематокрит</string>
+    <string name="SOE">Средний объем эритроцита</string>
+    <string name="SSH">Среднее содержание Hb в эритроците</string>
+    <string name="SKH">Средняя концентрация Hb в эритроцитах</string>
+    <string name="trombocit">Тромбоциты</string>
+    <string name="SOT">Средний объем тромбоцита</string>
+    <string name="trombokrit">Тромбокрит</string>
+    <string name="IRT">Индекс распред. тромбоцитов</string>
+
 </resources>
