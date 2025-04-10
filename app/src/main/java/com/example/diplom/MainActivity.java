@@ -16,9 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button about = findViewById(R.id.about);
         Button testing = findViewById(R.id.testing);
+        Button settings = findViewById(R.id.settings);
 
         about.setOnClickListener(v -> goAbout());
         testing.setOnClickListener(v -> goTesting());
+        settings.setOnClickListener(v -> goSettings());
 
     }
 
@@ -27,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void goTesting (){
         startActivity(new Intent(this, TestingActivity.class));
+    }
+    private void goSettings (){
+        startActivity(new Intent(this, SettingsActivity.class));
     }
 }

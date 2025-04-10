@@ -24,5 +24,7 @@
     <string name="trombokrit">Тромбокрит</string>
     <string name="IRT">Индекс распред. тромбоцитов</string>
     <string name="check">Проверить</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
 
 </resources>
