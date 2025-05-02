@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Diplom</string>
+    <string name="app_name">BloodTest</string>
     <string name="main_page">Главная страница</string>
     <string name="testing">Тестирование</string>
     <string name="history">История тестов</string>
