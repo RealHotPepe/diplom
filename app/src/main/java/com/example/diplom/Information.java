@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 @Entity(tableName = "blood_analysis")
 public class Information {
@@ -13,7 +15,7 @@ public class Information {
     @PrimaryKey(autoGenerate = true)
     public int id;
     @ColumnInfo(name = "date")
-    public String date = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
+    public String date;
     @ColumnInfo(name = "leikocit")
     public double leik;
     @ColumnInfo(name = "eritrocit")
@@ -42,7 +44,9 @@ public class Information {
     }
 
     public void setDate(Date date) {
-        this.date = String.valueOf(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+        sdf.setTimeZone(TimeZone.getDefault());
+        this.date = sdf.format(date);
     }
 
     public double getLeik() {

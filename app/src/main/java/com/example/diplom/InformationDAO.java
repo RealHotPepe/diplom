@@ -11,8 +11,8 @@ import java.util.List;
 @Dao
 public interface InformationDAO {
 
-    @Query("SELECT * FROM blood_analysis")
-    List<Information> getAll();
+    @Query("SELECT * FROM blood_analysis ORDER BY date DESC")
+    List<Information> getAllAnalyses();
 
     @Query("SELECT * FROM blood_analysis WHERE id = :infoId")
     Information getById (int infoId);
