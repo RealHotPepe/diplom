@@ -11,10 +11,10 @@ import java.util.List;
 @Dao
 public interface InformationDAO {
 
-    @Query("SELECT * FROM info")
+    @Query("SELECT * FROM blood_analysis")
     List<Information> getAll();
 
-    @Query("SELECT * FROM info WHERE id = :infoId")
+    @Query("SELECT * FROM blood_analysis WHERE id = :infoId")
     Information getById (int infoId);
 
     @Insert

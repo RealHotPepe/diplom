@@ -125,7 +125,7 @@
                         android:hint="@string/SKH" />
 
                     <EditText
-                        android:id="@+id/editTombocit"
+                        android:id="@+id/editTrombocit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -189,7 +189,7 @@
                             android:textSize="18sp" />
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/saveDB"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
