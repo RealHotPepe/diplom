@@ -1,11 +1,24 @@
 package com.example.diplom;
 
-import androidx.room.Database;
-import androidx.room.RoomDatabase;
+import android.content.Context;
 
-import com.example.diplom.Information;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 @Database(entities = {Information.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
+    private static AppDatabase instance;
+
     public abstract InformationDAO bloodAnalysisDao();
+
+    public static synchronized AppDatabase getInstance(Context context) {
+        if (instance == null) {
+            instance = Room.databaseBuilder(context.getApplicationContext(),
+                            AppDatabase.class, "blood_analysis_database") // Одинаковое имя!
+                    .fallbackToDestructiveMigration()
+                    .build();
+        }
+        return instance;
+    }
 }

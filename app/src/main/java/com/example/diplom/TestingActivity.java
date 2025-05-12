@@ -25,10 +25,7 @@ public class TestingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_testing);
 
         // Инициализация базы данных
-        db = Room.databaseBuilder(getApplicationContext(),
-                        AppDatabase.class, "blood-analysis-database")
-                .allowMainThreadQueries() // Только для тестирования
-                .build();
+        db = AppDatabase.getInstance(this);
 
         // Инициализация полей ввода ПОСЛЕ setContentView()
         initViews();
