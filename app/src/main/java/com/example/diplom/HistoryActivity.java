@@ -1,7 +1,9 @@
 package com.example.diplom;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -44,43 +46,13 @@ public class HistoryActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(List<Information> analyses) {
-                analysisDataList.clear();
-
-                if (analyses == null || analyses.isEmpty()) {
-                    analysisDataList.add("Нет данных об анализах");
-                } else {
-                    for (Information analysis : analyses) {
-                        String analysisText = String.format(Locale.getDefault(),
-                                "Дата: %s\n" +
-                                        "Лейкоциты: %.2f\n" +
-                                        "Эритроциты: %.2f\n" +
-                                        "Гемоглобин: %.2f\n" +
-                                        "Гематокрит: %.2f\n" +
-                                        "СОЭ: %.2f\n" +
-                                        "ССШ: %.2f\n" +
-                                        "СКХ: %.2f\n" +
-                                        "Тромбоциты: %.2f\n" +
-                                        "СОТ: %.2f\n" +
-                                        "Тромбокрит: %.2f\n" +
-                                        "ИРТ: %.2f",
-                                analysis.getDate(),
-                                analysis.getLeik(),
-                                analysis.getErit(),
-                                analysis.getGemo(),
-                                analysis.getGemat(),
-                                analysis.getSOE(),
-                                analysis.getSSH(),  // Добавлено
-                                analysis.getSKH(),  // Добавлено
-                                analysis.getTrombocit(),
-                                analysis.getSOT(),   // Добавлено
-                                analysis.getTrombokrit(),  // Добавлено
-                                analysis.getIRT());  // Добавлено
-
-                        analysisDataList.add(analysisText);
-                    }
-                }
-                adapter.notifyDataSetChanged();
+                AnalysisAdapter adapter = new AnalysisAdapter(HistoryActivity.this, analyses);
+                listView.setAdapter(adapter);
             }
         }.execute();
+    }
+    public void goBack(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -38,7 +38,8 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingBottom="15dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:scrollbarThumbVertical="@drawable/custom_scrollbar">
 
                     <EditText
                         android:id="@+id/editLeik"

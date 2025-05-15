@@ -107,6 +107,6 @@ public class TestingActivity extends AppCompatActivity {
 
     public void goBack(View view) {
         startActivity(new Intent(this, MainActivity.class));
-        finish(); // Закрываем текущую активити
+        finish();
     }
 }
