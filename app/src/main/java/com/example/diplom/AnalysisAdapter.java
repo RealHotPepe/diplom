@@ -1,5 +1,6 @@
 package com.example.diplom;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +17,13 @@ import java.util.Locale;
 public class AnalysisAdapter extends ArrayAdapter<Information> {
     private Context context;
     private List<Information> analyses;
+    private InformationDAO dao;
 
-    public AnalysisAdapter(Context context, List<Information> analyses) {
+    public AnalysisAdapter(Context context, List<Information> analyses, InformationDAO dao) {
         super(context, R.layout.list_item, analyses);
         this.context = context;
         this.analyses = analyses;
+        this.dao = dao;
     }
 
     @NonNull
@@ -64,6 +67,17 @@ public class AnalysisAdapter extends ArrayAdapter<Information> {
         }
 
         return convertView;
+    }
+
+    public void removeItem(int position) {
+        Information item = analyses.get(position);
+        new Thread(() -> {
+            dao.delete(item);
+            ((Activity)context).runOnUiThread(() -> {
+                analyses.remove(position);
+                notifyDataSetChanged();
+            });
+        }).start();
     }
 
     static class ViewHolder {

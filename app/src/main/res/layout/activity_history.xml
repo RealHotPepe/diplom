@@ -33,30 +33,40 @@
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_above="@id/backButton"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_above="@id/bottomLayout"
+                android:layout_margin="5dp"
                 android:divider="@android:color/transparent"
                 android:dividerHeight="8dp"
-                android:fadeScrollbars="false"
-                android:fastScrollEnabled="true"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:fadeScrollbars="false"/>
 
-            <Button
-                android:id="@+id/backButton"
+            <LinearLayout
+                android:id="@+id/bottomLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/rounded_two_corners"
-                android:onClick="goBack"
-                android:text="@string/back"
-                android:textSize="24sp" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvGenderDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Пол: "
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_two_corners"
+                    android:onClick="goBack"
+                    android:text="@string/back"
+                    android:textSize="24sp" />
+            </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

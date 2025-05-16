@@ -27,5 +27,7 @@
     <string name="check">Проверить</string>
     <string name="male">Мужской</string>
     <string name="female">Женский</string>
+    <string name="select_gender">Выберете Ваш пол</string>
+    <string name="save">Сохранить</string>
 
 </resources>

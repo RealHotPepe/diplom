@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SettingsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Заголовок в стиле других активити -->
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/settings"
@@ -21,35 +22,37 @@
             android:padding="20dp"
             android:textSize="34sp" />
 
+        <!-- Основной контейнер -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_margin="15dp"
-            android:padding="5dp"
+            android:padding="15dp"
             android:background="@drawable/rounded_body"
             android:orientation="vertical">
 
+            <!-- Блок выбора пола -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_text"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Пол:"
+                    android:text="@string/select_gender"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:padding="12sp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="12dp"
+                    android:textStyle="bold"/>
 
-                <!-- Группа с двумя RadioButton в строке -->
                 <RadioGroup
                     android:id="@+id/radioGroup"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="16dp">
+                    android:orientation="vertical">
 
                     <RadioButton
                         android:id="@+id/male"
@@ -57,18 +60,26 @@
                         android:layout_height="wrap_content"
                         android:text="@string/male"
                         android:textSize="16sp"
-                        android:padding="8dp"
-                        android:layout_marginEnd="16dp"/>
+                        android:layout_marginBottom="8dp"/>
 
                     <RadioButton
                         android:id="@+id/female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/female"
-                        android:textSize="16sp"
-                        android:padding="8dp"/>
+                        android:textSize="16sp"/>
                 </RadioGroup>
             </LinearLayout>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_two_corners"
+                android:onClick="goBack"
+                android:text="@string/save"
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
