@@ -30,4 +30,10 @@
     <string name="select_gender">Выберете Ваш пол</string>
     <string name="save">Сохранить</string>
 
+
+    <string name="analysing">Результаты анализов</string>
+    <string name="nameFromDb">Показатель</string>
+    <string name="userResult">Ваш результат</string>
+    <string name="goldCenter">Норма</string>
+
 </resources>

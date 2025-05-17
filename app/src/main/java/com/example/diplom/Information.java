@@ -4,13 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
 @Entity(tableName = "blood_analysis")
-public class Information {
+public class Information implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     public int id;

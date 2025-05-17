@@ -31,11 +31,23 @@ public class HistoryActivity extends AppCompatActivity {
         loadAnalyses();
         loadUserGender();
 
-        // Обработка долгого нажатия
+        // Обработка обычного нажатия (переход к анализу)
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Information analysis = (Information) parent.getItemAtPosition(position);
+            navigateToAnalysis(analysis);
+        });
+
+        // Обработка долгого нажатия (удаление)
         listView.setOnItemLongClickListener((parent, view, position, id) -> {
             showDeleteDialog(position);
             return true;
         });
+    }
+
+    private void navigateToAnalysis(Information analysis) {
+        Intent intent = new Intent(this, AnalysingActivity.class);
+        intent.putExtra("analysis_data", analysis);
+        startActivity(intent);
     }
 
     private void showDeleteDialog(int position) {
@@ -81,5 +93,4 @@ public class HistoryActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
-
 }

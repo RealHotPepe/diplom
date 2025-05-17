@@ -1,13 +1,13 @@
 package com.example.diplom;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
 
@@ -23,10 +23,7 @@ public class TestingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing);
 
-        // Инициализация базы данных
         db = AppDatabase.getInstance(this);
-
-        // Инициализация полей ввода ПОСЛЕ setContentView()
         initViews();
 
         Button saveButton = findViewById(R.id.saveDB);
@@ -49,37 +46,13 @@ public class TestingActivity extends AppCompatActivity {
 
     private void saveButton() {
         try {
-            double leik = Double.parseDouble(editTextLeik.getText().toString());
-            double erit = Double.parseDouble(editTextErit.getText().toString());
-            double gemo = Double.parseDouble(editTextGemo.getText().toString());
-            double gemat = Double.parseDouble(editTextGemat.getText().toString());
-            double SOE = Double.parseDouble(editTextSOE.getText().toString());
-            double SSH = Double.parseDouble(editTextSSH.getText().toString());
-            double SKH = Double.parseDouble(editTextSKH.getText().toString());
-            double trombocit = Double.parseDouble(editTextTrombocit.getText().toString());
-            double SOT = Double.parseDouble(editTextSOT.getText().toString());
-            double trombokrit = Double.parseDouble(editTextTrombokrit.getText().toString());
-            double IRT = Double.parseDouble(editTextIRT.getText().toString());
-
-            Information analysis = new Information();
-            analysis.setDate(new Date());
-            analysis.setLeik(leik);
-            analysis.setErit(erit);
-            analysis.setGemo(gemo);
-            analysis.setGemat(gemat);
-            analysis.setSOE(SOE);
-            analysis.setSSH(SSH);
-            analysis.setSKH(SKH);
-            analysis.setTrombocit(trombocit);
-            analysis.setSOT(SOT);
-            analysis.setTrombokrit(trombokrit);
-            analysis.setIRT(IRT);
+            Information analysis = createAnalysisFromInput();
 
             new Thread(() -> {
                 db.bloodAnalysisDao().insert(analysis);
                 runOnUiThread(() -> {
                     Toast.makeText(this, "Данные сохранены", Toast.LENGTH_SHORT).show();
-                    clearForm();
+                    navigateToAnalysis(analysis);
                 });
             }).start();
 
@@ -90,18 +63,28 @@ public class TestingActivity extends AppCompatActivity {
         }
     }
 
-    private void clearForm() {
-        editTextLeik.setText("");
-        editTextErit.setText("");
-        editTextGemo.setText("");
-        editTextGemat.setText("");
-        editTextSOE.setText("");
-        editTextSSH.setText("");
-        editTextSKH.setText("");
-        editTextTrombocit.setText("");
-        editTextSOT.setText("");
-        editTextTrombokrit.setText("");
-        editTextIRT.setText("");
+    private Information createAnalysisFromInput() throws NumberFormatException {
+        Information analysis = new Information();
+        analysis.setDate(new Date());
+        analysis.setLeik(Double.parseDouble(editTextLeik.getText().toString()));
+        analysis.setErit(Double.parseDouble(editTextErit.getText().toString()));
+        analysis.setGemo(Double.parseDouble(editTextGemo.getText().toString()));
+        analysis.setGemat(Double.parseDouble(editTextGemat.getText().toString()));
+        analysis.setSOE(Double.parseDouble(editTextSOE.getText().toString()));
+        analysis.setSSH(Double.parseDouble(editTextSSH.getText().toString()));
+        analysis.setSKH(Double.parseDouble(editTextSKH.getText().toString()));
+        analysis.setTrombocit(Double.parseDouble(editTextTrombocit.getText().toString()));
+        analysis.setSOT(Double.parseDouble(editTextSOT.getText().toString()));
+        analysis.setTrombokrit(Double.parseDouble(editTextTrombokrit.getText().toString()));
+        analysis.setIRT(Double.parseDouble(editTextIRT.getText().toString()));
+        return analysis;
+    }
+
+    private void navigateToAnalysis(Information analysis) {
+        Intent intent = new Intent(this, AnalysingActivity.class);
+        intent.putExtra("analysis_data", analysis);
+        startActivity(intent);
+        finish();
     }
 
     public void goBack(View view) {
