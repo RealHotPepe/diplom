@@ -5,4 +5,7 @@
     <color name="EE">#6200EE</color>
     <color name="FF">#F3E5FF</color>
     <color name="FFE">#fae5ff</color>
+    <color name="primary_text">#212121</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="section_background">#F5F5F5</color>
 </resources>

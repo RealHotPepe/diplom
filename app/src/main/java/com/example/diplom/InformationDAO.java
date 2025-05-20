@@ -26,4 +26,7 @@ public interface InformationDAO {
     @Delete
     void delete (Information information);
 
+    @Query("SELECT * FROM blood_analysis ORDER BY date ASC")
+    List<Information> getAllAnalysesSortedByDate();
+
 }

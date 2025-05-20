@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
         Button testing = findViewById(R.id.testing);
         Button settings = findViewById(R.id.settings);
         Button history = findViewById(R.id.history);
+        Button dynamics = findViewById(R.id.dynamics);
 
         about.setOnClickListener(v -> goAbout());
         testing.setOnClickListener(v -> goTesting());
         settings.setOnClickListener(v -> goSettings());
         history.setOnClickListener(v -> goHistory());
+        dynamics.setOnClickListener(v -> goDynamics());
 
     }
 
@@ -36,5 +38,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void goHistory (){
         startActivity(new Intent(this, HistoryActivity.class));
+    }
+    private void goDynamics (){
+        startActivity(new Intent(this, DynamicsActivity.class));
     }
 }
