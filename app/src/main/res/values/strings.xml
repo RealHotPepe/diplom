@@ -36,5 +36,6 @@
     <string name="userResult">Ваш результат</string>
     <string name="goldCenter">Норма</string>
     <string name="dynamics">Динамика</string>
+    <string name="dynamics_back">Назад</string>
 
 </resources>

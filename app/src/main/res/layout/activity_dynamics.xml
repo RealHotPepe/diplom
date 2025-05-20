@@ -31,12 +31,21 @@
                 android:id="@+id/dynamicsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:padding="5dp"
                 android:background="@drawable/rounded_body"
                 android:orientation="vertical">
 
             </LinearLayout>
         </ScrollView>
+        <Button
+            android:id="@+id/backDynamic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_two_corners"
+            android:text="@string/back"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.example.diplom;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +42,16 @@ public class ChartActivity extends AppCompatActivity {
         title.setText("Динамика: " + fieldTitle);
 
         loadChartData(fieldName, fieldTitle);
+        setupBackButton();
+    }
+
+    private void setupBackButton() {
+        Button backButton = findViewById(R.id.backChart);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, DynamicsActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void loadChartData(String fieldName, String fieldTitle) {

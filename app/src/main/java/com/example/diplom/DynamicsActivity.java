@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -29,7 +30,17 @@ public class DynamicsActivity extends AppCompatActivity {
         container = findViewById(R.id.dynamicsContainer);
         db = AppDatabase.getInstance(this);
 
+        setupBackButton();
         loadUserGender();
+    }
+
+    private void setupBackButton() {
+        Button backButton = findViewById(R.id.backDynamic);
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(DynamicsActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void loadUserGender() {
@@ -62,7 +73,7 @@ public class DynamicsActivity extends AppCompatActivity {
         row.setLayoutParams(new TableRow.LayoutParams(
                 TableRow.LayoutParams.MATCH_PARENT,
                 TableRow.LayoutParams.WRAP_CONTENT));
-        row.setPadding(10, 20, 10, 10);
+        row.setPadding(10, 18, 10, 10);
 
         TextView nameView = new TextView(this);
         nameView.setLayoutParams(new TableRow.LayoutParams(
